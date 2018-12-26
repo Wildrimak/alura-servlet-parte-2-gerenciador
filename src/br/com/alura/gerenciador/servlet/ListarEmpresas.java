@@ -19,7 +19,7 @@ public class ListarEmpresas extends HttpServlet {
 			throws ServletException, IOException {
 
 		request.setAttribute("empresas", Banco.getLista());
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("empresa/listarEmpresas.jsp");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/empresa/listarEmpresas.jsp");
 		requestDispatcher.forward(request, response);
 		
 	}

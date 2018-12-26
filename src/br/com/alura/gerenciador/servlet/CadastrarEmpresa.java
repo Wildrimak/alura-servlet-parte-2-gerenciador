@@ -30,7 +30,7 @@ public class CadastrarEmpresa extends HttpServlet {
 	}
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String path = "empresa/cadastrarEmpresa.jsp";
+		String path = "WEB-INF/empresa/cadastrarEmpresa.jsp";
 		RequestDispatcher rd = req.getRequestDispatcher(path);
 		rd.forward(req, resp);
 	}
