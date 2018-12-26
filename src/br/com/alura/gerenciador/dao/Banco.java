@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.alura.gerenciador.model.Empresa;
+import br.com.alura.gerenciador.model.Usuario;
 
 public class Banco {
 
-	private static List<Empresa> lista = new ArrayList<>();
+	private static List<Empresa> empresas = new ArrayList<>();
+	private static List<Usuario> usuarios = new ArrayList<>();
 	private static Integer id = 1;
 	
 	static {
@@ -17,29 +19,58 @@ public class Banco {
 		empresa2.setNome("Caelum");
 		empresa1.setId(id++);
 		empresa2.setId(id++);
-		lista.add(empresa1);
-		lista.add(empresa2);
+		empresas.add(empresa1);
+		empresas.add(empresa2);
+		Usuario user1 = new Usuario("Wildrimak", "12345");
+		Usuario user2 = new Usuario("Vanusa", "54321");
+		usuarios.add(user1);
+		usuarios.add(user2);
 	}
 
 	public void adiciona(Empresa empresa) {
 		empresa.setId(id++);
-		Banco.lista.add(empresa);
+		Banco.empresas.add(empresa);
 	}
 
-	public static List<Empresa> getLista() {
-		return Banco.lista;
+	public static List<Empresa> getEmpresas() {
+		return Banco.empresas;
 	}
 
 	public static Empresa getEmpresaByID(Integer id) {
 
 		Empresa empresaSendoRetornada = null;
 
-		for (Empresa empresa : lista) {
+		for (Empresa empresa : empresas) {
 			if (empresa.getId() == id) {
 				empresaSendoRetornada = empresa;
 			}
 		}
 
 		return empresaSendoRetornada;
+	}
+	
+	public static List<Usuario> getUsuarios(){
+		return Banco.usuarios;
+	}
+	
+	public static Usuario existeUsuario(String login, String senha) {
+		Usuario usuarioSendoRetornado = null;
+		
+		
+		System.out.print("Este for vai procurar um usuario com login: " + login);
+		System.out.println(" e senha " + senha);
+		
+		for (Usuario usuario : usuarios) {
+			if (usuario.autentica(login, senha)) {
+				usuarioSendoRetornado = usuario;
+				return usuarioSendoRetornado;
+			}
+		}
+		
+		
+		System.out.println("Este for não achou nenhum usuario");
+		
+		
+		return usuarioSendoRetornado;
 	}
 }

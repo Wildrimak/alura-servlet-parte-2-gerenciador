@@ -16,13 +16,17 @@ public class Entrada extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@SuppressWarnings("deprecation")
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		String action = request.getParameter("acao");
 		String nomeDaClasse = "br.com.alura.gerenciador.action." + action;
+		
+		
+		System.out.println("Action: " + action);
+		
+		
 		Acao acao;
 
 		try {
@@ -33,14 +37,18 @@ public class Entrada extends HttpServlet {
 		}
 
 		String executa = acao.executa(request, response);
-		System.out.println(executa);
+		
+		
+		System.out.println("Executa: " + executa);
+		
+		
 		String[] tipoEEndereco = executa.split(":");
 
 		if (tipoEEndereco[0].equals("forward")) {
 			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/empresa/" + tipoEEndereco[1]);
 			rd.forward(request, response);
 		} else {
-			response.sendRedirect("empresa/" + tipoEEndereco[1]);
+			response.sendRedirect(tipoEEndereco[1]);
 		}
 
 	}
