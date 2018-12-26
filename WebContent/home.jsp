@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:url var="linkListarEmpresas" value="/listarEmpresas" />
 <c:url var="linkCadastrarEmpresa" value="/cadastrarEmpresa" />
+<c:url var="linkListeComEntrada" value="/entrada?acao=ListarEmpresas" />
 
 <!DOCTYPE html>
 <html>
@@ -19,6 +20,7 @@
 	<ul>
 		<li><a href="${linkListarEmpresas}"> Listar empresas</a></li>
 		<li><a href="${linkCadastrarEmpresa}"> Cadastrar nova empresa</a></li>
+		<li><a href="${linkListeComEntrada}"> Liste com entrada</a></li>
 	</ul>
 
 </body>

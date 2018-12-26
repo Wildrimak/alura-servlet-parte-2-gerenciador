@@ -21,7 +21,6 @@ public class Entrada extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		
 		String action = request.getParameter("acao");
 		String nomeDaClasse = "br.com.alura.gerenciador.action." + action;
 		Acao acao;
@@ -34,14 +33,14 @@ public class Entrada extends HttpServlet {
 		}
 
 		String executa = acao.executa(request, response);
-
+		System.out.println(executa);
 		String[] tipoEEndereco = executa.split(":");
 
 		if (tipoEEndereco[0].equals("forward")) {
 			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/empresa/" + tipoEEndereco[1]);
 			rd.forward(request, response);
 		} else {
-			response.sendRedirect(tipoEEndereco[1]);
+			response.sendRedirect("empresa/" + tipoEEndereco[1]);
 		}
 
 	}
