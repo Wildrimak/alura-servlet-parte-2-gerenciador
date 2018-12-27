@@ -30,17 +30,11 @@ public class Usuario {
 	}
 
 	public boolean autentica(String login, String senha) {
-		System.out.println("EM AUTENTICA: " + login + " " + senha);
-		System.out.println("MEU LOGIN E SENHA: " +this.login + " " + this.senha);
-		
-		System.out.println("");
-		
-		if (login != this.login) {
-			System.out.println("Eu Entrei aqui no login errado");
+
+		if (!login.equals(this.login)) {
 			return false;
 		}
-		if (senha != this.senha) {
-			System.out.println("Entrei aqui na senha errada");
+		if (!senha.equals(this.senha)) {
 			return false;
 		}
 		return true;

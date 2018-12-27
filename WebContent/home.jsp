@@ -13,8 +13,6 @@
 
 <body>
 
-	<p>Bem Vindo Wildrimak!!</p>
-	<p>Aqui é a raiz de todas as coisas</p>
 	<p>Estas são as coisas que você pode fazer:</p>
 
 	<ul>

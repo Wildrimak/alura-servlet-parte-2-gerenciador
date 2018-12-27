@@ -11,7 +11,7 @@ public class Banco {
 	private static List<Empresa> empresas = new ArrayList<>();
 	private static List<Usuario> usuarios = new ArrayList<>();
 	private static Integer id = 1;
-	
+
 	static {
 		Empresa empresa1 = new Empresa();
 		Empresa empresa2 = new Empresa();
@@ -48,29 +48,21 @@ public class Banco {
 
 		return empresaSendoRetornada;
 	}
-	
-	public static List<Usuario> getUsuarios(){
+
+	public static List<Usuario> getUsuarios() {
 		return Banco.usuarios;
 	}
-	
+
 	public static Usuario existeUsuario(String login, String senha) {
 		Usuario usuarioSendoRetornado = null;
-		
-		
-		System.out.print("Este for vai procurar um usuario com login: " + login);
-		System.out.println(" e senha " + senha);
-		
+
 		for (Usuario usuario : usuarios) {
 			if (usuario.autentica(login, senha)) {
 				usuarioSendoRetornado = usuario;
 				return usuarioSendoRetornado;
 			}
 		}
-		
-		
-		System.out.println("Este for não achou nenhum usuario");
-		
-		
+
 		return usuarioSendoRetornado;
 	}
 }

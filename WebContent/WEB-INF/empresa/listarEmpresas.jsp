@@ -14,6 +14,9 @@
 </head>
 
 <body>
+	<p>Usuario logado: ${usuarioLogado.login}</p>
+	<p><a href="entrada?acao=Logout"> Sair</a></p>
+	
 	<h1>Lista de empresas:</h1>
 	
 	<c:if test="${not empty empresa}">
