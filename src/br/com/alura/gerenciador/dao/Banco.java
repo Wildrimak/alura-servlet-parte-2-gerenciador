@@ -65,4 +65,8 @@ public class Banco {
 
 		return usuarioSendoRetornado;
 	}
+
+	public static void removeEmpresaPorID(int id) {
+		empresas.remove(id);
+	}
 }

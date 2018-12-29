@@ -6,7 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Invalida implements Acao {
+public class Invalida implements Acionavel {
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response)

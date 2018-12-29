@@ -1,7 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:url var="linkListarEmpresas" value="/listarEmpresas" />
-<c:url var="linkCadastrarEmpresa" value="/cadastrarEmpresa" />
-<c:url var="linkListeComEntrada" value="/entrada?acao=ListarEmpresas" />
+<c:url var="cadastrarEmpresa" value="entrada?acao=CadastrarEmpresa" />
+<c:url var="listarEmpresas" value="entrada?acao=ListarEmpresas" />
 
 <!DOCTYPE html>
 <html>
@@ -16,9 +15,8 @@
 	<p>Estas são as coisas que você pode fazer:</p>
 
 	<ul>
-		<li><a href="${linkListarEmpresas}"> Listar empresas</a></li>
-		<li><a href="${linkCadastrarEmpresa}"> Cadastrar nova empresa</a></li>
-		<li><a href="${linkListeComEntrada}"> Liste com entrada</a></li>
+		<li><a href="${listarEmpresas}"> Listar empresas</a></li>
+		<li><a href="${cadastrarEmpresa}"> Cadastrar nova empresa</a></li>
 	</ul>
 
 </body>

@@ -1,4 +1,4 @@
-package exception;
+package br.com.alura.gerenciador.exception;
 
 public class NullPointInActionException  extends NullPointerException{
 
